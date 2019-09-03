@@ -1,5 +1,7 @@
 const sliderWine = document.querySelector('#slide-up-animation')
 const showMoreBtn = document.querySelector('p.show-more')
+const showInfosBtn = document.querySelector('#show-infos')
+const showInfosContainer = document.querySelector('#infos-container')
 
 
 if (window.innerWidth < 1024) {
@@ -16,4 +18,9 @@ if (window.innerWidth < 1024) {
   // changes the content of the div
   showMoreBtn.innerHTML = "liste des vins"
 }
+
+
+showInfosBtn.addEventListener('click', e => {
+  showInfosContainer.classList.toggle('hide-infos')
+})
 
