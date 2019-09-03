@@ -21,8 +21,18 @@
     margin: 0;
     text-transform: uppercase;
     color: $light-gray;
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-right: 8px;
+  }
+
+  .wine-user-link {
+    margin: 0;
+    text-transform: uppercase;
+    color: $light-gray;
+    font-size: 1.2rem;
+    margin-right: 8px;
+    font-family: $body-font;
+    text-decoration: none;
   }
 
   .wine-name {
@@ -65,4 +75,5 @@
     margin: 0;
   }
 }
+
 

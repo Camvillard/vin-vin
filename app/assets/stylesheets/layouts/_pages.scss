@@ -31,11 +31,19 @@ h3 {
 }
 
 
-p, li {
+p, li , label, select{
   color: $gray;
   font-family: $body-font;
   font-size: 1.4rem;
 }
+
+a {
+  color: $gray;
+  font-family: $headers-font;
+  font-size: 1.4rem;
+}
+
+
 
 .uppercased-thin {
   text-transform: uppercase;
