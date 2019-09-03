@@ -1,0 +1,63 @@
+/* -----  HOMEPAGE ----- */
+
+.logo-title {
+  font-size: 9.2rem;
+  margin-bottom: 0;
+  color: $dark-gray;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin: 0 auto 0.4em;
+  padding-left: 16px;
+}
+
+.event-description {
+  p {
+    color: $gray;
+  }
+}
+
+.show-more-container {
+  background: $dark-blue;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 74vh;
+  border-radius: 32px 32px 0 0;
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: hidden;
+}
+
+.show-cards {
+  animation: slideup 1s linear 0s 1 forwards running;
+  overflow-y: scroll;
+}
+
+.show-more {
+  color: white;
+
+}
+
+@keyframes slideup {
+  0% {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  50% {
+    align-items: flex-start;
+  }
+
+  100% {
+    height: 74vh;
+    align-items: flex-start;
+  }
+}

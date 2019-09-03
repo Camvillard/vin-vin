@@ -1,0 +1,48 @@
+/* -----  PAGES ----- */
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+
+// typogaphy
+
+h1, h2, h3 {
+  font-family: $headers-font;
+  color: $dark-blue;
+  margin: 0.4em auto;
+}
+
+h1 {
+  font-size: 4.8rem;
+}
+
+
+h2 {
+  font-size: 4rem;
+}
+
+h3 {
+  font-size: 3.2rem;
+}
+
+
+p, li {
+  color: $gray;
+  font-family: $body-font;
+  font-size: 1.4rem;
+}
+
+.uppercased-thin {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.accent-font {
+  font-family: $headers-font;
+  font-style: italic;
+}

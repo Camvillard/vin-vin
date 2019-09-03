@@ -1,0 +1,47 @@
+<div class="main-container">
+
+  <h1 class="logo-title">vin</h1>
+  <p class="tagline">(mais c'est le treize)</p>
+
+  <div class="event-description">
+    <p>vin, c’est quoi ? écoutez, ce n’est qu’un prétexte pour boire du vin et pour manger des chips au poivre et à la lime.</p>
+    <p>plus précisément, on a besoin d’aide pour choisir les vins qu’on boira au mariage :  qui de mieux que vous, qui allez probablement finir bourrés le 19 octobre avec ces mêmes vins, pour nous aider à les choisir.</p>
+    <p>du coup, voilà globalement le  concept de la  soirée : on a une petite liste de vins qu’on voudrait tester. l’idée est que chacun d’entre vous apporte une bouteille (pas de panique, tout est à moins de 20 $) + éventuellement un(des) petit(s) truc(s) à grignoter. </p>
+    <p>pour éviter les doublons - et parce que Cam ne peut pas s’empêcher de construire des sites web pour tout et n’importe quoi, vous n’avez qu’à indiquer ci dessous le  vin que vous compter apporter !</p>
+    <p class="small-text">(et c'est aussi l'anniversaire de Cam.)</p>
+  </div>
+
+  <div class="show-more-container" id="slide-up-animation">
+    <p class="show-more uppercased-thin">voir la liste des vins</p>
+    <div class="wine-cards">
+      <% @wines.each do |wine| %>
+      <div class="wine-card">
+        <div class="wine-avatar">
+          <p class="wine-user">pas encore de volontaire</p>
+          <%= image_tag "avatar-blank.png", alt: "avatar", class: "small-avatar" %>
+        </div>
+        <h3 class="wine-name"><%= wine.name %></h3>
+        <p class="wine-description">
+          <%= wine.description%>
+        </p>
+
+        <div class="wine-footer">
+          <p class="accent-font wine-associations">à manger avec : <%= wine.accords %></p>
+          <div class="wine-tags">
+            <div class="wine-tag"><p>rouge</p></div>
+            <div class="wine-tag"><p>italien</p></div>
+          </div>
+        </div>
+
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+
+

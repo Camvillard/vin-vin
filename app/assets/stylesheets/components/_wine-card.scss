@@ -1,0 +1,68 @@
+/* -----  WINE CARD ----- */
+
+
+.wine-card {
+  background: white;
+  position: relative;
+  border-radius: 12px;
+  width: 92%;
+  margin: 16px auto;
+  padding: 12px;
+
+  .wine-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    // top: 12px;
+    // right: 12px;
+  }
+
+  .wine-user {
+    margin: 0;
+    text-transform: uppercase;
+    color: $light-gray;
+    font-size: 1rem;
+    margin-right: 8px;
+  }
+
+  .wine-name {
+    margin-top: 0;
+    font-size: 1.8rem;
+  }
+
+  .wine-description {
+    font-size: 1.2rem;
+  }
+
+  .wine-associations {
+    font-size: 1.1rem;
+  }
+
+  .wine-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+// tags
+
+.wine-tags {
+  display: flex;
+  align-self: flex-end;
+}
+
+.wine-tag {
+  background: rgba(245, 197, 74, 0.4);
+  margin: 0 4px;
+    padding: 4px;
+
+  p {
+    color: $dark-blue;
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
