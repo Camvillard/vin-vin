@@ -74,3 +74,30 @@
     opacity: 1;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .main-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .infos-content {
+    padding: 6%;
+  }
+
+  .logo-title {
+    font-size: 12.4rem;
+  }
+
+  .show-more-container {
+    background: $dark-blue;
+    border: 12px solid $dark-blue;
+    position: relative;
+    flex: 0 0 56%;
+    height: 100vh;
+    border-radius: 32px 0 0 32px;
+    overflow: scroll;
+  }
+
+}
