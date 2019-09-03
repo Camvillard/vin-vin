@@ -17,8 +17,14 @@
       <% @wines.each do |wine| %>
       <div class="wine-card">
         <div class="wine-avatar">
-          <p class="wine-user">pas encore de volontaire</p>
-          <%= image_tag "avatar-blank.png", alt: "avatar", class: "small-avatar" %>
+          <% if wine.user_wines.any? %>
+          <p class="wine-user"><%= wine.user_wines.first.user.name %></p>
+            <%= image_tag "https://source.unsplash.com/random/40x40/?face", alt: "avatar", class: "small-avatar" %>
+          <% else %>
+            <%#= link_to 'apporter ce vin', new_wine_user_wine_path(wine), class: 'wine-user-link' %>
+            <p data-modal="#wine-<%= wine.id %>" class="open-modal-btn">apporter ce vin</p>
+
+          <% end %>
         </div>
         <h3 class="wine-name"><%= wine.name %></h3>
         <p class="wine-description">
@@ -41,6 +47,30 @@
 
 </div>
 
+
+
+  <% @wines.each do |wine| %>
+
+    <div class="modal hide-modal" id="wine-<%= wine.id %>">
+      <p id='close'>close</p>
+
+      <div class="modal-content">
+
+        <p class="wine-name"><%= wine.name %></p>
+
+        <p class="user-label">qui êtes-vous ?</p>
+
+        <%= simple_form_for([wine, @user_wine]) do |f| %>
+          <%= f.association :user, collection: User.all, prompt: "choisissez-vous dans la liste", label: false %>
+          <%= f.submit "apporter ce vin", class: "button button-fullwidth button-yellow" %>
+        <% end %>
+
+      </div>
+
+    </div>
+
+
+  <% end %>
 
 
 

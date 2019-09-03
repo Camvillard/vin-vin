@@ -15,6 +15,8 @@ class WinesController < ApplicationController
   end
 
   def update
+    @user = User.new
+    @wine = Wine.find(params[:id])
   end
 
   def destroy

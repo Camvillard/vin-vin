@@ -19,7 +19,7 @@ Wine.create!(
 
 Wine.create!(
   name: 'Bottega Gold Prosecco',
-  description: "Vin arborant une couleur jaune-vert de faible intensité avec des bulles fines et persistantes. Nez délicat qui s'ouvre sur des effluves de pomme mûre et de fleurs blanches. Ce blanc mousseux laisse percevoir une agréable fraîcheur. Il révèle une texture souple qui se termine dans une finale légèrement soutenue."
+  description: "Vin arborant une couleur jaune-vert de faible intensité avec des bulles fines et persistantes. Nez délicat qui s'ouvre sur des effluves de pomme mûre et de fleurs blanches. Ce blanc mousseux laisse percevoir une agréable fraîcheur. Il révèle une texture souple qui se termine dans une finale légèrement soutenue.",
   accords: 'une tarte au citron'
 )
 

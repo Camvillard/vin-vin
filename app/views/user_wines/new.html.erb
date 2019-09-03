@@ -1,0 +1,10 @@
+<h1>new</h1>
+<div class="main-container">
+
+  <%= simple_form_for([@wine, @user_wine]) do |f| %>
+  <%= f.association :user, collection: User.all %>
+  <%= f.submit "ok" %>
+  <% end %>
+
+</div>
+
