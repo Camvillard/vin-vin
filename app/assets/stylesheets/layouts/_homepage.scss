@@ -42,9 +42,22 @@
   align-items: center;
   p {
     color: $dark-blue;
-    font-size: 1rem;
+    font-size: 0.2rem;
     margin: 0;
     text-transform: uppercase;
+  }
+
+  &.show-infos {
+    animation: showInfosCircle 0.3s linear 0s forwards;
+  }
+
+  &.hide-infos {
+    animation: hideInfosCircle 0.3s linear 0s forwards;
+  }
+
+  &.show-infos p {
+    font-size: 1rem;
+    margin: 0.2 auto;
   }
 }
 
@@ -123,6 +136,41 @@
   }
 }
 
+// animation for infos cicrle
+@keyframes showInfosCircle {
+  0% {
+    top: 12px;
+    right: 12px;
+    width: 86px;
+    height: 86px;
+  }
+
+  100% {
+    top: 24px;
+    right: 24px;
+    width: 180px;
+    height: 180px;
+  }
+}
+
+// animation for infos cicrle
+@keyframes hideInfosCircle {
+
+  0% {
+    top: 24px;
+    right: 24px;
+    width: 180px;
+    height: 180px;
+  }
+  100% {
+    top: 12px;
+    right: 12px;
+    width: 86px;
+    height: 86px;
+  }
+}
+
+
 @media screen and (min-width: 1024px) {
   .main-container {
     display: flex;
@@ -135,8 +183,16 @@
     left: 24px;
     width: 88px;
     height: 88px;
+  }
 
-    .date {
+  .event-infos {
+    top: 24px;
+    left: 24px;
+    width: 88px;
+    height: 88px;
+
+    .date,
+    .hour {
       margin-bottom: 6px;
     }
   }
@@ -158,5 +214,41 @@
     border-radius: 32px 0 0 32px;
     overflow: scroll;
   }
+
+  // animation for infos cicrle
+  @keyframes showInfosCircle {
+    0% {
+      top: 24px;
+      left: 24px;
+      width: 88px;
+      height: 88px;
+    }
+
+    100% {
+      top: 48px;
+      left: 48px;
+      width: 180px;
+      height: 180px;
+    }
+  }
+
+  // animation for infos cicrle
+  @keyframes hideInfosCircle {
+
+    0% {
+      top: 48px;
+      left: 48px;
+      width: 180px;
+      height: 180px;
+    }
+
+    100% {
+      top: 24px;
+      left: 24px;
+      width: 88px;
+      height: 88px;
+    }
+  }
+
 
 }
