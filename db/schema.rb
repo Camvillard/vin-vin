@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_170018) do
+ActiveRecord::Schema.define(version: 2019_09_04_160111) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "tag_wines", force: :cascade do |t|
+    t.bigint "wine_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tag_id"], name: "index_tag_wines_on_tag_id"
+    t.index ["wine_id"], name: "index_tag_wines_on_wine_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "user_wines", force: :cascade do |t|
     t.bigint "user_id"
@@ -39,6 +54,8 @@ ActiveRecord::Schema.define(version: 2019_09_03_170018) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "tag_wines", "tags"
+  add_foreign_key "tag_wines", "wines"
   add_foreign_key "user_wines", "users"
   add_foreign_key "user_wines", "wines"
 end

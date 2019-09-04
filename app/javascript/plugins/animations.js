@@ -1,7 +1,8 @@
 const sliderWine = document.querySelector('#slide-up-animation')
+
 const showMoreBtn = document.querySelector('p.show-more')
 const showInfosBtn = document.querySelector('#show-infos')
-const showInfosContainer = document.querySelector('#infos-container')
+const infosContainer = document.querySelector('#infos-container')
 
 
 if (window.innerWidth < 1024) {
@@ -21,6 +22,7 @@ if (window.innerWidth < 1024) {
 
 
 showInfosBtn.addEventListener('click', e => {
-  showInfosContainer.classList.toggle('hide-infos')
+  infosContainer.classList.toggle('show-infos')
+  infosContainer.classList.toggle('hide-infos')
 })
 

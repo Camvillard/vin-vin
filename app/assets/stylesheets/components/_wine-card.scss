@@ -13,8 +13,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    // top: 12px;
-    // right: 12px;
   }
 
   .wine-user {
@@ -23,6 +21,10 @@
     color: $light-gray;
     font-size: 1.2rem;
     margin-right: 8px;
+  }
+
+  .open-modal-btn {
+    margin: 0;
   }
 
   .wine-user-link {

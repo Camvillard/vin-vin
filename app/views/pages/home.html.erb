@@ -5,8 +5,9 @@
   </div>
 
   <div class="event-infos hide-infos" id="infos-container">
-    <p class="date">+ d'infos</p>
-    <p class="hour">environ 20h</p>
+    <p class="date">13 septembre 2019</p>
+    <p class="hour">environ vers 20h</p>
+    <p class="address">5807 St Urbain</p>
   </div>
 
   <div class="infos-content">
@@ -48,8 +49,9 @@
         <div class="wine-footer">
           <p class="accent-font wine-associations">à manger avec : <%= wine.accords %></p>
           <div class="wine-tags">
-            <div class="wine-tag"><p>rouge</p></div>
-            <div class="wine-tag"><p>italien</p></div>
+            <% wine.tags.each do |tag| %>
+                <div class="wine-tag"><p><%= tag.name %></p></div>
+            <% end %>
           </div>
         </div>
 
