@@ -34,10 +34,10 @@
         <div class="wine-avatar">
           <% if wine.user_wines.any? %>
           <p class="wine-user"><%= wine.user_wines.first.user.name %></p>
-            <%= image_tag "https://source.unsplash.com/random/40x40/?face", alt: "avatar", class: "small-avatar" %>
+            <%= image_tag wine.user_wines.first.user.avatar, alt: "avatar", class: "small-avatar" %>
           <% else %>
             <%#= link_to 'apporter ce vin', new_wine_user_wine_path(wine), class: 'wine-user-link' %>
-            <p data-modal="#wine-<%= wine.id %>" class="open-modal-btn">apporter ce vin</p>
+            <p data-modal="#wine-<%= wine.id %>" class="open-modal-btn uppercased-thin">apporter ce vin</p>
 
           <% end %>
         </div>

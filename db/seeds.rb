@@ -6,17 +6,17 @@ User.delete_all
 Tag.delete_all
 Wine.delete_all
 
-User.create!(name: 'Lisa', avatar: '')
-User.create!(name: 'Thomas', avatar: '')
-User.create!(name: 'Cé', avatar: '')
-User.create!(name: 'Chaton', avatar: '')
-User.create!(name: 'Claire', avatar: '')
-User.create!(name: 'Arthur', avatar: '')
-User.create!(name: 'Kristyskaia', avatar: '')
-User.create!(name: 'Romain', avatar: '')
-User.create!(name: 'Marie', avatar: '')
-User.create!(name: 'Don', avatar: '')
-User.create!(name: 'Elichat', avatar: '')
+User.create!(name: 'Lisa', avatar: 'https://res.cloudinary.com/camvillard/image/upload/v1567616480/vin/lisa.jpg')
+User.create!(name: 'Thomas', avatar: 'https://res.cloudinary.com/camvillard/image/upload/v1567616480/vin/thomas.jpg')
+User.create!(name: 'Cé', avatar: 'https://res.cloudinary.com/camvillard/image/upload/v1567616480/vin/ce.jpg')
+User.create!(name: 'Chaton', avatar: 'https://res.cloudinary.com/camvillard/image/upload/v1567616480/vin/chaton.jpg')
+User.create!(name: 'Claire', avatar: 'https://res.cloudinary.com/camvillard/image/upload/v1567616480/vin/coco.jpg')
+User.create!(name: 'Arthur', avatar: 'https://res.cloudinary.com/camvillard/image/upload/v1567616480/vin/coco.jpg')
+User.create!(name: 'Kristyskaia', avatar: 'https://res.cloudinary.com/camvillard/image/upload/v1567616480/vin/coco.jpg')
+User.create!(name: 'Romain', avatar: 'https://res.cloudinary.com/camvillard/image/upload/v1567616480/vin/coco.jpg')
+User.create!(name: 'Marie', avatar: 'https://res.cloudinary.com/camvillard/image/upload/v1567616480/vin/coco.jpg')
+User.create!(name: 'Don', avatar: 'https://res.cloudinary.com/camvillard/image/upload/v1567616480/vin/coco.jpg')
+User.create!(name: 'Elichat', avatar: 'https://res.cloudinary.com/camvillard/image/upload/v1567616480/vin/coco.jpg')
 
 rouge = Tag.create!(name: "rouge")
 blanc = Tag.create!(name: "blanc")
