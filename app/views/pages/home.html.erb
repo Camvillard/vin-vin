@@ -116,16 +116,17 @@
     <div class="form-row">
       <div class="form-group">
         <%= label_tag(:wine_name, "nom du vin :") %>
-        <%= text_field_tag(:wine_name) %>
+        <%= text_field_tag(:wine_name, "",placeholder: "Château Margaux...") %>
       </div>
       <div class="form-group">
         <%= label_tag(:wine_tag, "type de vin :") %>
-         <%= select_tag(:wine_tag, options_for_select(Tag.all.map { |u| u.name}, "name"))  %>
+        <%= text_field_tag(:wine_tag, "", placeholder: "rouge, italien, fruité...") %>
+         <%#= select_tag(:wine_tag, options_for_select(Tag.all.map { |u| u.name}, "name"))  %>
       </div>
     </div>
     <div class="form-group">
       <%= label_tag(:wine_accord, "accords suggérés :") %>
-      <%= text_field_tag(:wine_accord) %>
+      <%= text_field_tag(:wine_accord, "", placeholder: "des oignons frits par exemple...") %>
     </div>
     <div class="form-group">
       <%= label_tag(:wine_user, "qui êtes-vous :") %>
