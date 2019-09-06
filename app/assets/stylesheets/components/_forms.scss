@@ -46,9 +46,10 @@ input:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 
   .form-group {
-    flex: 0 0 48%;
+    flex: 0 0 100%;
   }
 }
 
@@ -103,6 +104,13 @@ input:focus {
 }
 
 @media screen and (min-width: 1024px) {
+
+  .form-row {
+
+    .form-group {
+      flex: 0 0 48%;
+    }
+  }
 
   .new_user_wine {
     width: 40%;
