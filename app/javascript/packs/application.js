@@ -4,3 +4,4 @@ console.log('Hello World from Webpacker')
 
 import "../plugins/animations"
 import "../plugins/modal"
+import "./select2"
