@@ -78,13 +78,15 @@
       <p class="user-label">qui êtes-vous ?</p>
 
       <%= simple_form_for([wine, @user_wine]) do |f| %>
-        <%= f.association :user, collection: User.all, prompt: "choisissez-vous dans la liste", label: false %>
+        <%= f.association :user, collection: User.all, prompt: "choisissez-vous dans la liste", label: false, input_html: {class: 'js-example-basic-single'} %>
         <%= f.submit "apporter ce vin", class: "button button-fullwidth button-yellow" %>
       <% end %>
 
     </div>
 
   </div>
+
+  <%= javascript_pack_tag 'select2' %>
 
 
 <% end %>
