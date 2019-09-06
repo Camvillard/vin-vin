@@ -11,13 +11,20 @@
   font-size: 1.2rem;
   height: 38px;
   margin: 16px auto;
+  transition: all 0.3s;
 }
 
 .button-fullwidth {
   width: 100%;
 }
 
+
 .button-yellow {
-  color: $dark-gray;
-  background: $yellow;
+  color: $dark-gray !important;
+  background: $yellow !important;
+
+  &:hover {
+    color: white !important;
+    background: $medium-blue !important;
+  }
 }

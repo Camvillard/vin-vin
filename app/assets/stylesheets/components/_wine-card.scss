@@ -30,6 +30,7 @@
   .open-modal-btn {
     margin: 0;
     font-size: 1.2rem;
+    transition: .3s;
   }
 
   .open-modal-btn:hover {
@@ -67,6 +68,38 @@
   }
 }
 
+
+.surprise-wine-card {
+  border: 3px solid white;
+  border-radius: 12px;
+  width: 92%;
+  margin: 16px auto;
+  padding: 16px;
+
+
+  p {
+    color: white;
+  }
+
+  .wine-description {
+    font-family: $headers-font;
+    width: 60%;
+    margin-top: 0;
+  }
+
+  .open-modal-btn {
+    margin: 0;
+    font-size: 1.2rem;
+    transition: 0.3s;
+  }
+
+  .open-modal-btn:hover {
+    cursor: pointer;
+    color: $light-gray;
+  }
+}
+
+
 // tags
 
 .wine-tags {
@@ -90,7 +123,8 @@
 
 
 @media screen and (min-width: 1024px) {
-  .wine-card {
+  .wine-card,
+  .surprise-wine-card {
     width: 76%;
   }
 }

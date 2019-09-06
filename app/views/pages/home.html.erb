@@ -24,47 +24,62 @@
     </div>
 
   </div>
+  <!-- enf of infos-content -->
 
 
   <div class="show-more-container" id="slide-up-animation">
     <p class="show-more uppercased-thin"></p>
     <div class="wine-cards">
+      <!-- starting  iterating over all the wines -->
       <% @wines.each do |wine| %>
-      <div class="wine-card">
-        <div class="wine-avatar">
-          <% if wine.user_wines.any? %>
-          <p class="wine-user"><%= wine.user_wines.first.user.name %></p>
-            <%= image_tag wine.user_wines.first.user.avatar, alt: "avatar", class: "small-avatar" %>
-          <% else %>
-            <%#= link_to 'apporter ce vin', new_wine_user_wine_path(wine), class: 'wine-user-link' %>
-            <p data-modal="#wine-<%= wine.id %>" class="open-modal-btn uppercased-thin">j'apporte ce vin</p>
+        <div class="wine-card">
+          <div class="wine-avatar">
+            <% if wine.user_wines.any? %>
+            <p class="wine-user"><%= wine.user_wines.first.user.name %></p>
+              <%= image_tag wine.user_wines.first.user.avatar, alt: "avatar", class: "small-avatar" %>
+            <% else %>
+              <%#= link_to 'apporter ce vin', new_wine_user_wine_path(wine), class: 'wine-user-link' %>
+              <p data-modal="#wine-<%= wine.id %>" class="open-modal-btn uppercased-thin">j'apporte ce vin</p>
 
-          <% end %>
-        </div>
-        <a href="<%= wine.link %>" target="_blank" rel="noreferrer noopener"><h3 class="wine-name"><%= wine.name %></h3></a>
-        <p class="wine-description">
-          <%= wine.description%>
-        </p>
-
-        <div class="wine-footer">
-          <p class="accent-font wine-associations">à manger avec : <%= wine.accords %></p>
-          <div class="wine-tags">
-            <% wine.tags.each do |tag| %>
-                <div class="wine-tag"><p><%= tag.name %></p></div>
             <% end %>
           </div>
-        </div>
+          <a href="<%= wine.link %>" target="_blank" rel="noreferrer noopener"><h3 class="wine-name"><%= wine.name %></h3></a>
+          <p class="wine-description">
+            <%= wine.description%>
+          </p>
 
-      </div>
+          <div class="wine-footer">
+            <p class="accent-font wine-associations">à manger avec : <%= wine.accords %></p>
+            <div class="wine-tags">
+              <% wine.tags.each do |tag| %>
+                  <div class="wine-tag"><p><%= tag.name %></p></div>
+              <% end %>
+            </div>
+          </div>
+
+        </div>
       <% end %>
+      <!-- end of iteration over all the wines -->
+
+      <!-- surprise wine card -->
+      <div class="surprise-wine-card">
+        <p class="wine-description">
+          je connais un vin trop bon mais qui n’est pas la liste et j’ai trop envie de vous le faire découvrir.
+        </p>
+        <div class="wine-avatar">
+            <p data-modal="#surprise-wine" class="open-modal-btn uppercased-thin">ajouter un vin</p>
+        </div>
+      </div>
+      <!-- end of surprise wine card -->
 
 
     </div>
+
   </div>
 
 </div>
 
-<!-- modals -->
+<!-- modal for new user_wine instance -->
 
 <% @wines.each do |wine| %>
 
@@ -86,11 +101,38 @@
 
   </div>
 
-  <%= javascript_pack_tag 'select2' %>
-
-
 <% end %>
 
+
+<!-- modal for new wine element instance -->
+
+<div class="modal hide-modal" id="surprise-wine">
+
+  <p id='close'>close</p>
+
+  <%= form_with(url: "/wines", method: "post", local: true, class: "new-wine") do %>
+    <div class="form-row">
+      <div class="form-group">
+        <%= label_tag(:wine_name, "nom du vin :") %>
+        <%= text_field_tag(:wine_name) %>
+      </div>
+      <div class="form-group">
+        <%= label_tag(:wine_tag, "type de vin :") %>
+         <%= select_tag(:wine_tag, options_for_select(Tag.all.map { |u| u.name}, "name"))  %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:wine_accord, "accords suggérés :") %>
+      <%= text_field_tag(:wine_accord) %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:wine_user, "qui êtes-vous :") %>
+      <%= select_tag(:wine_user, options_for_select(User.all.map { |u| u.name}, "name"))  %>
+    </div>
+    <%= submit_tag("ajouter un vin", class: "button button-yellow") %>
+  <% end %>
+
+</div>
 
 
 

@@ -1,6 +1,61 @@
 /* -----  FORMS ----- */
 
 
+
+// general stuff for forms
+input,
+select {
+  font-size: 1.6rem;
+  font-family: $body-font;
+  height: 38px;
+  padding-left: 6px;
+}
+
+label  {
+  font-size: 1.6rem;
+  font-family: $body-font;
+}
+
+input {
+  border-radius: 6px;
+  border: none;
+}
+
+select:focus,
+input:focus {
+  outline: none;
+  box-shadow: 0px 0px 6px rgba(245, 197, 74, 0.8);
+}
+
+
+.form-group  {
+  label,
+  input,
+  select {
+    display: block;
+    width: 100%;
+  }
+
+  input,
+  select {
+    margin: 8px 0 24px;
+  }
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .form-group {
+    flex: 0 0 48%;
+  }
+}
+
+
+
+
+
 .simple_form {
   select {
     width: 100%;
@@ -13,17 +68,37 @@
 
   select {
     background: white;
-    height: 38px;
-  }
-
-  select:focus {
-    outline: none;
-    box-shadow: 0px 0px 6px rgba(245, 197, 74, 0.8);
   }
 
   option {
     border: 1px solid red;
   }
+}
+
+
+.new-wine {
+  width: 60%;
+  margin: auto;
+
+  select,
+  input {
+    background: white;
+  }
+
+  input {
+    font-family: $headers-font;
+    color: $dark-blue;
+  }
+
+  label {
+    margin-bottom: 4px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 100;
+  }
+
+
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -32,6 +107,15 @@
     width: 40%;
 
     select {
+      height: 44px;
+    }
+  }
+
+  .new-wine {
+    width: 40%;
+
+    select,
+    input {
       height: 44px;
     }
   }
