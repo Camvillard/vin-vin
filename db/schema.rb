@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_04_174818) do
+ActiveRecord::Schema.define(version: 2019_09_13_150442) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "degustations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_degustations_on_user_id"
+  end
+
+  create_table "notes", force: :cascade do |t|
+    t.bigint "wine_id"
+    t.bigint "degustation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "rating"
+    t.index ["degustation_id"], name: "index_notes_on_degustation_id"
+    t.index ["wine_id"], name: "index_notes_on_wine_id"
+  end
 
   create_table "tag_wines", force: :cascade do |t|
     t.bigint "wine_id"
@@ -55,6 +72,9 @@ ActiveRecord::Schema.define(version: 2019_09_04_174818) do
     t.string "link"
   end
 
+  add_foreign_key "degustations", "users"
+  add_foreign_key "notes", "degustations"
+  add_foreign_key "notes", "wines"
   add_foreign_key "tag_wines", "tags"
   add_foreign_key "tag_wines", "wines"
   add_foreign_key "user_wines", "users"

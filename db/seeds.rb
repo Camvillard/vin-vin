@@ -2,6 +2,8 @@ puts "deleting everything"
 
 UserWine.delete_all
 TagWine.delete_all
+Note.delete_all
+Degustation.delete_all
 User.delete_all
 Tag.delete_all
 Wine.delete_all
@@ -229,6 +231,7 @@ yalumba = Wine.create!(
 
 TagWine.create!(tag: australie, wine: yalumba)
 TagWine.create!(tag: blanc, wine: yalumba)
+
 
 
 puts "seeds finished"

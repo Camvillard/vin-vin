@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @test = Test.new(user: @user)
+    @my_tests = Test.where(user: @user)
   end
 
   def new
@@ -19,4 +22,5 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
 end

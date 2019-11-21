@@ -1,0 +1,31 @@
+/* -----  LAYOUTS : DEGUSTATION ----- */
+
+
+.degustation-content {
+
+  h3 {
+    text-align: center;
+    margin-left: 0 !important;
+  }
+}
+
+
+.show-cards {
+  animation: slideup 1s linear 0s 1 forwards running;
+  overflow-y: scroll;
+
+  .see-wines {
+    margin: 12px auto;
+  }
+
+}
+
+
+.see-wines {
+  color: white;
+  margin: 0;
+}
+
+
+// form
+
