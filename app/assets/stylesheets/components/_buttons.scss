@@ -28,3 +28,13 @@
     background: $medium-blue !important;
   }
 }
+
+.button-blue {
+  color: white !important;
+  background: $dark-blue !important;
+
+  &:hover {
+    color: white !important;
+    background: $medium-blue !important;
+  }
+}

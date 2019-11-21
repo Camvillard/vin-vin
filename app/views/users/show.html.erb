@@ -1,2 +1,36 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<p>show page for <%= @user.name %></p>
+
+
+<h3>noter un nouveau vin</h3>
+
+<h3>mes notes</h3>
+<% if @my_tests %>
+
+  <% @my_tests.each do |test| %>
+    <p><%= test.wine.name %></p>
+  <% end %>
+
+<% end %>
+
+
+
+<!-- modal for new test instance -->
+
+
+
+<div class="modal" id="new-test">
+  <p id='close'>close</p>
+
+  <div class="modal-content">
+
+    <p class="user-label">quel vin veux-tu noter ?</p>
+
+    <%= simple_form_for([@user, @test]) do |f| %>
+      <%= f.association :wine, collection: Wine.all, prompt: "choisissez dans la liste", label: false %>
+      <%= f.submit "commencer à noter ce vin", class: "button button-fullwidth button-yellow" %>
+    <% end %>
+
+  </div>
+
+</div>

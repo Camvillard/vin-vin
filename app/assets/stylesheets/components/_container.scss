@@ -4,3 +4,20 @@
 .main-container {
   margin: 0 24px;
 }
+
+
+.full-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.yellow {
+    background: $yellow;
+  }
+}
+
+.content {
+  width: 92vw;
+  margin: auto;
+}
